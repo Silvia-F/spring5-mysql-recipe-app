@@ -9,3 +9,14 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: mysql
     show-sql: true
+# The lines below allow to generate a sql script to create the database tables based on the domain classes.
+# The script is generated without escape characters, so we need to add the ; by ourselves
+# The lines should be commented after the script is generated, otherwise every time the application runs, the script will be incremented with duplicated statements
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: guru_database_create.sql
